@@ -1,0 +1,9 @@
+.hide {
+    display: none;
+}
+
+.content {
+    background: #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
