@@ -1,2 +1,2 @@
 # -hash-
-link: https://paveldub.github.io/-hash-/
+link: https://paveldub.github.io/pushStateoO
