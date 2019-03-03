@@ -7,6 +7,24 @@ const pageMap = {
 
 let currentPage;
 const list = document.querySelector('.list');
+const content = document.querySelectorAll('.content');
+
+document.addEventListener('DOMContentLoaded', e => {
+
+    for (let contentItem of content) {
+        if (contentItem.classList.contains('news-content')) {
+            contentItem.classList.remove('hide');
+        } else {
+            contentItem.classList.add('hide');
+        }
+    }
+});
+
+window.addEventListener('popstate', e => {
+    if (e.state && e.state.page) {
+        handlePage(e.state.page);
+    }
+});
 
 list.addEventListener('click', e => {
 
@@ -25,13 +43,7 @@ list.addEventListener('click', e => {
     }
 });
 
-window.addEventListener('popstate', e => {
-    if (e.state && e.state.page) {
-        handlePage(e.state.page);
-    }
-});
-
-function handlePage(page) {
+function handlePage (page) {
     const pageName = pageMap[page];
 
     if (pageName) {
